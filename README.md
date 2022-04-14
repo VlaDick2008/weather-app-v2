@@ -8,3 +8,7 @@
 - Typescript
 - Redux Toolkit
 - SCSS
+
+## Сслыка на Vercel:
+https://weather-app-nu-rouge.vercel.app/
+(теперь даже погода по координатам работает! (раньше нет если что))
