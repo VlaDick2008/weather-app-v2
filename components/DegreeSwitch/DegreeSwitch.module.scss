@@ -1,0 +1,36 @@
+.degreeBlock {
+  display: flex;
+  span {
+    margin-right: 10px;
+    opacity: 0.6;
+    font-size: 18px;
+  }
+}
+
+.celsius,
+.farenheit {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 6px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.celsius {
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.farenheit {
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+@media screen and (max-width: 500px) {
+  .degreeBlock {
+    position: absolute;
+    left: 69%;
+  }
+}

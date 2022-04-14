@@ -1,0 +1,23 @@
+.mainWrapper {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0 80px;
+  flex: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content {
+  align-self: center;
+}
+
+@media screen and (max-width: 500px) {
+  .mainWrapper {
+    margin: 0 20px;
+  }
+}

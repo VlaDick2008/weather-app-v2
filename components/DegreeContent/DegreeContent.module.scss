@@ -1,0 +1,43 @@
+.contentWrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.degree {
+  font-size: 152px;
+  margin-left: 20px;
+
+  span {
+    opacity: 0.6;
+  }
+}
+
+.description {
+  text-align: center;
+  font-size: 24px;
+  margin-top: 15px;
+  text-transform: capitalize;
+}
+
+.fellsLike {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 15px;
+  margin-bottom: 150px;
+}
+
+@media screen and (max-width: 500px) {
+  .contentWrapper {
+    margin-top: 100px;
+  }
+
+  .fellsLike {
+    margin-bottom: 10px;
+  }
+
+  .degree {
+    font-size: 100px;
+    margin-left: 0;
+  }
+}

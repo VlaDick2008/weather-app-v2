@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+
+body {
+  background-color: #498cec;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+}
+
+.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff !important;
+}
+
+.transition {
+  transition: all 0.2s ease-in-out;
+}
+
+.alert-enter {
+  opacity: 1;
+}
+
+.alert-exit {
+  opacity: 0;
+}
+
+.sunny {
+  background: linear-gradient(150deg, #498cec 0%, #82afee 60%, #2d71cf 100%);
+  animation: bgAnim 10s infinite linear;
+  background-size: 500%;
+}
+
+.cloudy {
+  background: linear-gradient(120deg, #5079b4 30%, #476794 70%, #567cb1 100%);
+  animation: bgAnim 10s infinite ease;
+  background-size: 1000%;
+}
+
+.drizzle {
+  background: linear-gradient(0deg, #7794bd 30%, #7497c7 70%, #60799c 100%);
+  animation: bgAnim 10s infinite ease;
+  background-size: 1000%;
+}
+
+.rain {
+  background: linear-gradient(90deg, #627b9e 30%, #445b79 60%, #414c58 100%);
+  animation: bgAnim 10s infinite linear;
+  background-size: 500%;
+}
+
+.storm {
+  background: linear-gradient(50deg, #425572 0%, #39485f 30%, #354a69 60%, #233044 100%);
+  animation: bgAnim 10s infinite ease;
+  background-size: 500%;
+}
+
+.snow {
+  background: linear-gradient(90deg, #62b3ff 30%, #69b4df 60%, rgb(135, 191, 255) 100%);
+  animation: bgAnim 10s infinite linear;
+  background-size: 500%;
+}
+
+.fog {
+  background: linear-gradient(30deg, #bbc1ca 25%, #a1a6ac 50%, #a9b2be 75%, #b2bdce 100%);
+  animation: bgAnim 30s infinite ease;
+  background-size: 400%;
+}
+
+@media screen and (max-width: 500px) {
+  .sunny,
+  .fog,
+  .snow,
+  .storm,
+  .rain,
+  .drizzle,
+  .cloudy {
+    background-size: 10000%;
+    background-repeat: no-repeat;
+  }
+}
+
+@keyframes bgAnim {
+  0% {
+    background-position: 80% 0%;
+  }
+  50% {
+    background-position: 20% 100%;
+  }
+  100% {
+    background-position: 80% 0%;
+  }
+}
+
+.sunnyImg,
+.snowImg {
+  animation: roundImgAnim 60s linear infinite;
+  width: 200px;
+}
+
+.cloudyImg,
+.rainImg,
+.drizzleImg,
+.stormImg {
+  animation: cloudImgAnim 10s linear infinite;
+  width: 200px;
+}
+
+.fogImg {
+  animation: fogImgAnim 10s linear infinite;
+  width: 200px;
+}
+
+@keyframes roundImgAnim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cloudImgAnim {
+  0% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+@keyframes fogImgAnim {
+  0% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}
