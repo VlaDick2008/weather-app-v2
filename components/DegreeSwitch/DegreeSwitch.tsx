@@ -4,10 +4,11 @@ import { degreeSlice } from '../../store/reducers/DegreeSlice';
 import styles from './DegreeSwitch.module.scss';
 
 export const DegreeSwitch: React.FC = () => {
-  const buttonRef = React.useRef<HTMLDivElement | null>(null);
+  const buttonsRef = React.useRef<HTMLDivElement | null>(null);
 
   const { setDegreeIndex } = degreeSlice.actions;
   const dispatch = useAppDispatch();
+  const { degreeVisible } = useAppSelector((state) => state.degreeIndexReducer);
 
   //Я так и не раскусил, какой же должен быть тип у 'event' тут :P
   const handleClick = (e: any) => {
@@ -22,22 +23,22 @@ export const DegreeSwitch: React.FC = () => {
     }
   };
 
+  React.useEffect(() => {
+    if (!degreeVisible) {
+      buttonsRef.current?.classList.add('hidden');
+    } else {
+      buttonsRef.current?.classList.remove('hidden');
+    }
+  }, [degreeVisible]);
+
   return (
     <div>
-      <div className={styles.degreeBlock}>
+      <div ref={buttonsRef} className={styles.degreeBlock}>
         <span>º</span>
-        <div
-          onClick={handleClick}
-          id="button"
-          ref={buttonRef}
-          className={`${styles.celsius} active transition`}>
+        <div onClick={handleClick} id="button" className={`${styles.celsius} active transition`}>
           C
         </div>
-        <div
-          onClick={handleClick}
-          id="button"
-          ref={buttonRef}
-          className={`${styles.farenheit} transition`}>
+        <div onClick={handleClick} id="button" className={`${styles.farenheit} transition`}>
           F
         </div>
       </div>

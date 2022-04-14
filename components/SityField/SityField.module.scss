@@ -56,11 +56,13 @@
 @media screen and (max-width: 500px) {
   .sityInput {
     font-size: 20px;
+    width: 90%;
   }
   .sityInput:disabled {
     font-size: 30px;
+    width: 100%;
   }
   .sityBtn {
-    font-size: 16px;
+    font-size: 15px;
   }
 }

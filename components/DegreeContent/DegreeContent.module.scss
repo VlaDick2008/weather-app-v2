@@ -7,7 +7,7 @@
 .degree {
   font-size: 152px;
   margin-left: 20px;
-
+  font-family: 'Lato', sans-serif;
   span {
     opacity: 0.6;
   }
@@ -29,7 +29,7 @@
 
 @media screen and (max-width: 500px) {
   .contentWrapper {
-    margin-top: 100px;
+    margin-top: 50px;
   }
 
   .fellsLike {

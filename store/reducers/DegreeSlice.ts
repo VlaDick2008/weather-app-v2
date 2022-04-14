@@ -2,10 +2,12 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface DegreeState {
   degreeIndex: number;
+  degreeVisible: boolean;
 }
 
 const initialState: DegreeState = {
   degreeIndex: 2,
+  degreeVisible: true,
 };
 
 export const degreeSlice = createSlice({
@@ -14,6 +16,9 @@ export const degreeSlice = createSlice({
   reducers: {
     setDegreeIndex(state, action: PayloadAction<number>) {
       state.degreeIndex = action.payload;
+    },
+    setDegreeVisibylity(state, action: PayloadAction<boolean>) {
+      state.degreeVisible = action.payload;
     },
   },
 });

@@ -5,6 +5,7 @@ import images from '../../public/images';
 import styles from './SityField.module.scss';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { sityInputSlice } from '../../store/reducers/SityInputSlice';
+import { degreeSlice } from '../../store/reducers/DegreeSlice';
 
 export const SityField: React.FC = () => {
   const changeInput = React.useRef<HTMLInputElement | null>(null);
@@ -18,12 +19,15 @@ export const SityField: React.FC = () => {
   const dispatch = useAppDispatch();
   const { setSity } = sityInputSlice.actions;
   const { sityName } = useAppSelector((state) => state.sityInputReducer);
+  const { setDegreeVisibylity } = degreeSlice.actions;
 
   React.useEffect(() => {
     if (inputState) {
       changeInput.current?.removeAttribute('disabled');
+      dispatch(setDegreeVisibylity(false));
     } else {
       changeInput.current?.setAttribute('disabled', 'disabled');
+      dispatch(setDegreeVisibylity(true));
     }
 
     if (inputBtnsState) {
@@ -31,7 +35,7 @@ export const SityField: React.FC = () => {
     }
 
     setInputValue(sityName);
-  }, [inputBtnsState, inputState, sityName]);
+  }, [dispatch, inputBtnsState, inputState, setDegreeVisibylity, sityName]);
 
   const handleLocationClick = () => {
     fetch(

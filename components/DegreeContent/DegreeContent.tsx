@@ -237,7 +237,6 @@ export const DegreeContent: React.FC = () => {
           {data && degreeIndex === 2
             ? `${Math.floor(weatherTemp)}°`
             : `${Math.floor(weatherTemp * 1.8 + 32)}°`}
-          {error && 'Ошибка'}
         </div>
       </div>
       <div className={styles.description}>

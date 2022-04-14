@@ -23,9 +23,12 @@
 
 @media screen and (max-width: 550px) {
   .detailsContent {
-    font-size: 22px;
+    font-size: 20px;
   }
   .detailsTitle {
-    font-size: 15px;
+    font-size: 14px;
+  }
+  .detailsItem {
+    margin: 0 5px;
   }
 }
